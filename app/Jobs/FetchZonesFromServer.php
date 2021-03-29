@@ -2,6 +2,7 @@
 
 namespace App\Jobs;
 
+use App\DomainCheck\DomainCheck;
 use App\Models\Server;
 use App\Models\Zone;
 use DateTime;
@@ -41,6 +42,9 @@ class FetchZonesFromServer extends Job {
         }
 
         foreach ($domains as $domain) {
+            if ( ! DomainCheck::instance()->isDomain($domain)) {
+                continue;
+            }
             $zone = Zone::where('domain', '=', $domain)->first();
             if ($zone !== null) {
                 $zone->last_seen = new DateTime();
