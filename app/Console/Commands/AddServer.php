@@ -66,6 +66,6 @@ class AddServer extends Command {
             'db_domain_name_column' => $dbDomainNameColumn,
         ]);
 
-        echo 'Server ' . $data->id . ' added' . "\n";
+        $this->info('Server ' . $data->id . ' added');
     }
 }

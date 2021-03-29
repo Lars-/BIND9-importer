@@ -4,6 +4,10 @@ use Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider;
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
+if ( ! file_exists(__DIR__ . '/../database/database.sqlite')) {
+    file_put_contents(__DIR__ . '/../database/database.sqlite', '');
+}
+
 (new Laravel\Lumen\Bootstrap\LoadEnvironmentVariables(
     dirname(__DIR__)
 ))->bootstrap();
