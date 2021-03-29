@@ -20,7 +20,7 @@ class FetchZones extends Command {
      *
      * @var string
      */
-    protected $description = 'Command description';
+    protected $description = 'Fetch all domain names from all servers and update storage/zonefile.db';
 
     /**
      * Create a new command instance.

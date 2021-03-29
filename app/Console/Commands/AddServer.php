@@ -20,7 +20,7 @@ class AddServer extends Command {
      *
      * @var string
      */
-    protected $description = 'Command description';
+    protected $description = 'Add a server to the database';
 
     /**
      * Create a new command instance.

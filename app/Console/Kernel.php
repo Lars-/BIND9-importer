@@ -4,6 +4,7 @@ namespace App\Console;
 
 use App\Console\Commands\AddServer;
 use App\Console\Commands\FetchZones;
+use App\Console\Commands\ShowAllZones;
 use Illuminate\Console\Scheduling\Schedule;
 use Laravel\Lumen\Console\Kernel as ConsoleKernel;
 
@@ -16,6 +17,7 @@ class Kernel extends ConsoleKernel {
     protected $commands = [
         AddServer::class,
         FetchZones::class,
+        ShowAllZones::class,
     ];
 
     /**
@@ -26,6 +28,6 @@ class Kernel extends ConsoleKernel {
      * @return void
      */
     protected function schedule(Schedule $schedule) {
-        //
+        $schedule->command('ljpc:fetch-zones')->cron('* * * * *');
     }
 }

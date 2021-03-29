@@ -79,7 +79,7 @@ LJPC;
      * @return bool
      * @throws \Exception
      */
-    private function isAvailableOnServer(): bool {
+    public function isAvailableOnServer(): bool {
         return ! ((new DateTime($this->last_seen))->diff(new DateTime)->m > 5);
     }
 }
